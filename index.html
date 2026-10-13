@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our Safe Haven 💖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader" class="loader" role="status" aria-live="polite">
+  <div class="loader-inner">
+    <div class="loader-kicker">for my favorite person</div>
+    <div class="loader-name">Pookie</div>
+    <div class="loader-track">
+      <div class="loader-fill" id="loader-fill"></div>
+      <span class="loader-mouse" id="loader-mouse">🐭</span>
+      <span class="loader-cat" id="loader-cat">🐱</span>
+    </div>
+    <div class="loader-line" id="loader-line">Warming up your safe place…</div>
+    <button class="loader-skip" id="loader-skip" type="button">tap to skip</button>
+  </div>
+</div>
+<nav class="nav" aria-label="Sections">
+  <a href="#">🏠<span> Top</span></a>
+  <a href="#cycle">🌸<span> Cycle</span></a>
+  <a href="#care">💧<span> Care</span></a>
+  <a href="#journal">📖<span> Journal</span></a>
+  <a href="#love">💌<span> Love</span></a>
+  <a href="#cute">🐾<span> Cute</span></a>
+</nav>
+
+
+<div id="heart-field"></div>
+<div id="hug-confetti"></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="badge">Dedicated to Pookie 💖✨</span>
+    <h1>Our Safe Haven 💖</h1>
+    <p class="font-script">Where you can leave your worries, take a breath, and feel loved.</p>
+    <div class="hero-line"></div>
+  </div>
+
+  <!-- MOOD SELECTOR -->
+  <section>
+    <h2 class="section-title">How are you feeling, Pookie? 🌸</h2>
+    <p class="section-sub">Pick a mood and I'll change the whole room to match how you feel.</p>
+    <div class="mood-grid" id="mood-grid">
+      <button class="mood-btn" data-mood="overwhelmed">Overwhelmed 🥺</button>
+      <button class="mood-btn" data-mood="exhausted">Exhausted 😴</button>
+      <button class="mood-btn" data-mood="missing">Missing You 🥹</button>
+      <button class="mood-btn" data-mood="sleep">Can't Sleep 🌙</button>
+      <button class="mood-btn active" data-mood="default">Reset / Happy 😊</button>
+    </div>
+  </section>
+
+  <!-- WORRY DISSOLVER -->
+  <section>
+    <h2 class="section-title">Let It All Go 🤍</h2>
+    <p class="section-sub">Whatever's sitting heavy on your chest, put it here. I'll take care of it.</p>
+    <div class="glass worry-card">
+      <textarea id="worry-input" placeholder="Type down whatever is stressing you out, Pookie... let it go here 🤍"></textarea>
+      <div class="dissolve-layer" id="dissolve-layer"></div>
+      <div class="btn-row"><button class="btn" id="release-btn">Release Worries ✨</button></div>
+    </div>
+  </section>
+
+  <!-- BREATHING -->
+  <section>
+    <h2 class="section-title">Breathe With Me 🌬️</h2>
+    <p class="section-sub">Slow down for a minute. In, hold, out. I'm right here with you.</p>
+    <div class="glass breathe-card">
+      <div class="breathe-ring-wrap">
+        <div class="breathe-ring"></div>
+        <div class="breathe-circle" id="breathe-circle">Press start</div>
+      </div>
+      <button class="btn" id="breathe-btn">Start Breathing Session</button>
+    </div>
+  </section>
+
+    <!-- TODAY -->
+  <section id="today">
+    <div class="glass affirm-card">
+      <div class="affirm-kicker" id="affirm-date"></div>
+      <p class="affirm-text" id="affirm-text"></p>
+      <button class="btn-soft" id="affirm-next" type="button">Another one 💫</button>
+    </div>
+  </section>
+
+  <!-- CYCLE -->
+  <section id="cycle">
+    <h2 class="section-title">Pookie's Cycle Calendar 🌸</h2>
+    <p class="section-sub">Mark your days, spot patterns, and get gentle care tips. Everything stays private on this device.</p>
+    <div class="glass cyc-card">
+      <div class="cyc-phase"><div class="cyc-phase-emoji" id="cyc-emoji">🌷</div><div><b id="cyc-name"></b><small id="cyc-sub"></small></div></div>
+      <div class="cyc-head"><button type="button" id="cyc-prev" aria-label="Previous month">‹</button><div id="cyc-month"></div><button type="button" id="cyc-next" aria-label="Next month">›</button></div>
+      <div class="cyc-dow"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+      <div class="cyc-grid" id="cyc-grid"></div>
+      <div class="cyc-legend"><span><i class="lg lg-period"></i>Period</span><span><i class="lg lg-pred"></i>Predicted</span><span><i class="lg lg-ov"></i>Glow window</span><span><i class="lg lg-dot"></i>Logged</span></div>
+      <div class="cyc-day">
+        <h4 id="cy-title"></h4>
+        <div class="cyc-actions"><button type="button" class="btn-soft" id="cy-period"></button><button type="button" class="btn-soft" id="cy-start">Period started this day 🌸</button></div>
+        <div class="cyc-label">How does your body feel?</div>
+        <div class="chip-row" id="cy-sym"></div>
+        <div class="cyc-label">Mood</div>
+        <div class="chip-row" id="cy-mood"></div>
+      </div>
+      <div class="cyc-tips"><h4>Comfort tips</h4><ul id="cy-tips"></ul><p class="cyc-note" id="cy-note"></p></div>
+      <div class="cyc-settings">
+        <label>Cycle length <input type="number" id="cy-cl" min="21" max="45" inputmode="numeric"> days</label>
+        <label>Period length <input type="number" id="cy-pl" min="2" max="10" inputmode="numeric"> days</label>
+      </div>
+      <p class="cyc-fine">Predictions are gentle estimates, not medical advice. They get smarter after 2+ logged cycles.</p>
+    </div>
+  </section>
+
+  <!-- SELF CARE -->
+  <section id="care">
+    <h2 class="section-title">Daily Self-Care 💧</h2>
+    <p class="section-sub">Tiny things that add up to feeling cared for. Resets every morning.</p>
+    <div class="glass care-card">
+      <div class="care-top"><span>Today's progress</span><b id="care-pct">0%</b></div>
+      <div class="care-bar"><div id="care-fill"></div></div>
+      <div class="care-label">Water <span id="care-water-n">0/8</span></div>
+      <div class="water-row" id="water-row"></div>
+      <div class="care-label">Little acts of love for yourself</div>
+      <div class="care-list" id="care-list"></div>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section id="journal">
+    <h2 class="section-title">Mood &amp; Gratitude Journal 📖</h2>
+    <p class="section-sub">A tiny private diary, saved only on this device.</p>
+    <div class="glass journal-card">
+      <div class="journal-streak" id="j-streak"></div>
+      <div class="cyc-label">How are you feeling?</div>
+      <div class="chip-row" id="j-mood"></div>
+      <textarea id="j-text" class="field" rows="3" placeholder="What's on your heart today, Pookie?"></textarea>
+      <input id="j-grat" class="field" type="text" maxlength="140" placeholder="One thing I'm grateful for today 🌼">
+      <div class="btn-row"><button class="btn" id="j-save" type="button">Save to my diary 💾</button></div>
+      <div class="j-list" id="j-list"></div>
+    </div>
+  </section>
+
+  <!-- CONSTELLATION -->
+  <section>
+    <h2 class="section-title">Sky Map of Love 🌌</h2>
+    <p class="section-sub">Every star holds a little truth about us. Tap one.</p>
+    <div class="glass sky-card" id="sky-card"></div>
+  </section>
+
+  <!-- LOVE JAR -->
+  <section id="love">
+    <h2 class="section-title">Daily Love Jar 🫙</h2>
+    <p class="section-sub">Tap the jar to pull out a reason I love you.</p>
+    <div class="jar-wrap">
+      <div class="jar" id="love-jar">
+        <div class="jar-lid"></div>
+        <div class="jar-neck"></div>
+        <div class="jar-body" id="jar-body"></div>
+      </div>
+      <span class="jar-label">tap the jar, Pookie</span>
+    </div>
+  </section>
+
+  <!-- OPEN WHEN -->
+  <section>
+    <h2 class="section-title">Open When... 💌</h2>
+    <p class="section-sub">Four little envelopes, for four different kinds of days.</p>
+    <div class="envelope-grid">
+      <div class="glass envelope" data-letter="miss">
+        <div class="wax-seal"></div>
+        <span class="envelope-icon">✉️</span>
+        <div class="envelope-title">Open when you miss me</div>
+      </div>
+      <div class="glass envelope" data-letter="badday">
+        <div class="wax-seal"></div>
+        <span class="envelope-icon">✉️</span>
+        <div class="envelope-title">Open when you had a bad day</div>
+      </div>
+      <div class="glass envelope" data-letter="insecure">
+        <div class="wax-seal"></div>
+        <span class="envelope-icon">✉️</span>
+        <div class="envelope-title">Open when you feel insecure</div>
+      </div>
+      <div class="glass envelope" data-letter="hug">
+        <div class="wax-seal"></div>
+        <span class="envelope-icon">✉️</span>
+        <div class="envelope-title">Open when you want a warm hug</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HUG -->
+  <section>
+    <div class="glass hug-card">
+      <h2 class="section-title" style="margin-bottom:6px;">Need Arms Around You? 🤗</h2>
+      <p class="section-sub">Close your eyes after you press it.</p>
+      <button class="btn hug-btn" id="hug-btn">Press for a Big Warm Hug 🤗</button>
+    </div>
+  </section>
+
+  <!-- KISS COUNTER -->
+  <section>
+    <h2 class="section-title">Kiss Counter 💋</h2>
+    <p class="section-sub">One tap, one kiss. Let's see how many we can rack up.</p>
+    <div class="glass kiss-card">
+      <button class="kiss-btn" id="kiss-btn" aria-label="Send a kiss">💋</button>
+      <div class="kiss-count" id="kiss-count">0</div>
+      <div class="kiss-label" id="kiss-label">kisses sent so far</div>
+    </div>
+  </section>
+
+  <!-- KNOCK -->
+  <section>
+    <h2 class="section-title">Give Little Mouse a Knock 👋</h2>
+    <p class="section-sub">A little nudge so he knows you're thinking of him, or that you need him right now.</p>
+    <div class="glass knock-card">
+      <button class="btn" id="knock-btn">Send a Knock 👋</button>
+      <p class="knock-note" id="knock-note">He'll get a tiny heads up on his phone — nothing else is shared.</p>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section>
+    <h2 class="section-title">Until I See You Again ⏳</h2>
+    <p class="section-sub">Set the date we're next together, and watch the wait shrink.</p>
+    <div class="glass countdown-card">
+      <div class="countdown-set" id="countdown-set">
+        <input type="date" class="countdown-input" id="countdown-input">
+        <button class="btn" id="countdown-btn">Save Date</button>
+      </div>
+      <div class="countdown-display" id="countdown-display" style="display:none;">
+        <div class="countdown-grid">
+          <div class="countdown-unit"><span id="cd-days">0</span><label>days</label></div>
+          <div class="countdown-unit"><span id="cd-hours">0</span><label>hrs</label></div>
+          <div class="countdown-unit"><span id="cd-mins">0</span><label>min</label></div>
+          <div class="countdown-unit"><span id="cd-secs">0</span><label>sec</label></div>
+        </div>
+        <button class="countdown-edit" id="countdown-edit">change date</button>
+      </div>
+    </div>
+  </section>
+
+    <!-- CUTE CORNER -->
+  <section id="cute">
+    <h2 class="section-title">Cute Corner 🐾</h2>
+    <p class="section-sub">Tap a little scene for a surprise.</p>
+    <div class="scene-grid" id="scene-grid">
+      <button class="glass scene-card" type="button" data-cap="Snuggle time! 🐱🐭💗"><span class="scene"><span class="sc-a">🐱</span><span class="sc-b">🐭</span><i class="sc-float f1">💗</i><i class="sc-float f2">💕</i><i class="sc-float f3">💗</i></span><span class="scene-cap">Cat &amp; mouse snuggle</span></button>
+      <button class="glass scene-card" type="button" data-cap="Teddy hug, squeeze! 🧸"><span class="scene"><span class="sc-a">🧸</span><span class="sc-b">🧸</span><i class="sc-float f1">💞</i><i class="sc-float f2">💗</i><i class="sc-float f3">💞</i></span><span class="scene-cap">Teddy hug</span></button>
+      <button class="glass scene-card" type="button" data-cap="Sweet dreams, Pookie 🌙"><span class="scene"><span class="sc-moon">🌙</span><i class="sc-float f1">💤</i><i class="sc-float f2">⭐</i><i class="sc-float f3">✨</i></span><span class="scene-cap">Sleepy moon</span></button>
+      <button class="glass scene-card" type="button" data-cap="Dance party! 🎶"><span class="scene"><span class="sc-hop1">🐱</span><span class="sc-hop2">🐭</span><i class="sc-float f1">🎵</i><i class="sc-float f2">🎶</i><i class="sc-float f3">🎵</i></span><span class="scene-cap">Dance party</span></button>
+    </div>
+  </section>
+
+  <!-- VAULT -->
+  <section>
+    <h2 class="section-title">Secret Passcode Vault 🔒</h2>
+    <p class="section-sub">Only my favorite person knows how to open this.</p>
+    <div class="glass vault-card">
+      <div class="vault-input-row">
+        <input type="password" class="vault-input" id="vault-input" placeholder="🔒 Enter the secret code...">
+        <button class="btn" id="vault-btn">Unlock</button>
+      </div>
+      <div class="vault-msg" id="vault-msg"></div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="font-script">Forever your safe place</span>
+    made with love, for my Pookie 💕<br>— your Little Mouse 🐭
+  </footer>
+</div>
+
+<!-- FLOATING MASCOT -->
+<button class="mascot-btn" id="mascot-btn" aria-label="Say hi to Little Mouse">🐭</button>
+<div class="mascot-bubble" id="mascot-bubble"></div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<!-- CAT BUDDY -->
+<div class="cat-buddy" id="cat-buddy" aria-hidden="true">
+  <div class="cat-shadow"></div>
+  <div class="cat-bob" id="cat-bob">
+    <div class="cat-tail"></div>
+    <div class="cat-body" id="cat-body">
+      <div class="cat-ear cat-ear-l"></div>
+      <div class="cat-ear cat-ear-r"></div>
+      <div class="cat-eye cat-eye-l" id="cat-eye-l"><div class="cat-pupil" id="cat-pupil-l"></div></div>
+      <div class="cat-eye cat-eye-r" id="cat-eye-r"><div class="cat-pupil" id="cat-pupil-r"></div></div>
+      <div class="cat-nose"></div>
+      <div class="cat-mouth"></div>
+      <div class="cat-blush cat-blush-l"></div>
+      <div class="cat-blush cat-blush-r"></div>
+      <div class="cat-paw cat-paw-l"></div>
+      <div class="cat-paw cat-paw-r"></div>
+    </div>
+  </div>
+</div>
+<div class="cat-bubble" id="cat-bubble"></div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="glass modal-card">
+    <img id="modal-gif" class="modal-gif" alt="" style="display:none;">
+    <div id="modal-gif-fallback" class="modal-gif-fallback" style="display:none;">
+      <div class="kiss-burst">
+        <span class="kiss-emoji">😽</span>
+        <span class="spark s1">💗</span>
+        <span class="spark s2">✨</span>
+        <span class="spark s3">💕</span>
+        <span class="spark s4">✨</span>
+        <span class="spark s5">💗</span>
+        <span class="spark s6">✨</span>
+      </div>
+    </div>
+    <h3 id="modal-title">Title</h3>
+    <p id="modal-body">Body</p>
+    <button class="modal-close" id="modal-close">Close 💕</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
